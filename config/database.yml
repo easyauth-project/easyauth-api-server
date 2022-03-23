@@ -1,0 +1,17 @@
+# Using postgres as the DB
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: <%= Settings.db.name %>
+  pool: 5
+  username: <%= Settings.db.user %>
+  password: <%= Settings.db.pass %>
+
+development:
+  <<: *default
+  
+test:
+  <<: *default
+
+production:
+  <<: *default
